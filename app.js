@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
@@ -7,7 +8,7 @@ const _ = require("lodash");
 // var workItems = [];
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://admin-dhiraj:admin321@cluster0.shdma.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://" + process.env.MONGODB_USER + ":" + process.env.MONGODB_PASSWORD +"@cluster0.shdma.mongodb.net/todolistDB");
 // variable to store the last visited page listTitle
 
 
